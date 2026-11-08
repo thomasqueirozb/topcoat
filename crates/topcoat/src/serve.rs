@@ -71,6 +71,46 @@ pub async fn start(service: impl Into<RouterService>) -> Result<(), io::Error> {
     serve(listener, service).await
 }
 
+/// Starts a router on the configured host and port using the experimental
+/// io_uring edge transport (feature `io-uring`).
+///
+/// This is the one entry point that differs from the default transport:
+/// it is a plain blocking function, not an async one, so an application
+/// using it has a plain `fn main()` instead of `#[tokio::main]`, and calls
+/// this instead of [`start`]. Everything else — router construction,
+/// pages, components, and handlers — is identical, and handler code runs
+/// on a Tokio runtime created inside, with the usual Tokio APIs.
+///
+/// The listener binds to the `HOST` and `PORT` environment variables, or
+/// `127.0.0.1` and `3000` when unset. The transport is HTTP/1.1 only and
+/// blocks until an edge thread fails; stop the process with a signal for
+/// shutdown (there is no graceful drain in this prototype). See the
+/// `topcoat-router` io_uring module documentation for the full list of
+/// limitations.
+///
+/// # Errors
+///
+/// Returns `Err` if `HOST`/`PORT` are invalid, if io_uring is not
+/// available on this system (it never falls back to the default
+/// transport), if binding the listener fails, or if an edge thread fails.
+#[cfg(feature = "io-uring")]
+pub fn start_uring(service: impl Into<RouterService>) -> Result<(), io::Error> {
+    use std::net::{SocketAddr, ToSocketAddrs};
+
+    let host = host_from_env()?;
+    let port = port_from_env()?;
+    let addr: SocketAddr = (host.as_str(), port)
+        .to_socket_addrs()?
+        .next()
+        .ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidInput,
+                "HOST did not resolve to an address",
+            )
+        })?;
+    crate::router::serve_uring_blocking(service.into(), addr)
+}
+
 /// Resolves when the process receives a shutdown signal: Ctrl+C, or `SIGTERM`
 /// on Unix.
 async fn shutdown_signal() {

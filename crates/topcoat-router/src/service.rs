@@ -76,6 +76,29 @@ impl RouterService {
         self.shutdown_timeout = timeout;
         self
     }
+
+    /// Dispatches a fully buffered request and collects the response body.
+    ///
+    /// Used by alternative transports (the io_uring edge) that cannot hand
+    /// the router a streaming hyper body. Behaves like the hyper
+    /// [`Service`] implementation below: the connection's `remote_addr` is
+    /// stamped on the request, and the full response body is collected.
+    #[cfg(feature = "io-uring")]
+    pub(crate) async fn handle_buffered(
+        &self,
+        mut request: Request,
+        remote_addr: Option<SocketAddr>,
+    ) -> (crate::StatusCode, crate::HeaderMap, crate::request::Bytes) {
+        if let Some(addr) = remote_addr {
+            request.extensions_mut().insert(RemoteAddr(addr));
+        }
+        let response = self.router.handle(request).await;
+        let (parts, body) = response.into_parts();
+        let bytes = crate::to_bytes(body, usize::MAX)
+            .await
+            .unwrap_or_default();
+        (parts.status, parts.headers, bytes)
+    }
 }
 
 impl From<Router> for RouterService {

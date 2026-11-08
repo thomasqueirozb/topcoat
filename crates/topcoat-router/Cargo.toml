@@ -42,6 +42,14 @@ serve = [
 	"tokio/sync",
 	"tokio/time",
 ]
+io-uring = [
+	"serve",
+	"dep:tokio-uring",
+	"dep:io-uring",
+	"dep:httparse",
+	"dep:socket2",
+	"tokio/rt-multi-thread",
+]
 sse = [
 	"dep:tokio",
 	"tokio/time",
@@ -90,6 +98,10 @@ time = { workspace = true, optional = true, features = ["formatting"] }
 tokio = { workspace = true, optional = true }
 tokio-util = { workspace = true, optional = true, features = ["io"] }
 tokio-tungstenite = { workspace = true, optional = true, features = ["handshake"] }
+tokio-uring = { workspace = true, optional = true }
+io-uring = { workspace = true, optional = true }
+httparse = { workspace = true, optional = true }
+socket2 = { workspace = true, optional = true }
 tower = { workspace = true, optional = true, features = ["util"] }
 tower-http = { workspace = true, optional = true, features = [
 	"compression-br",

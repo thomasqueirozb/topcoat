@@ -56,6 +56,9 @@ pub mod view;
 #[cfg(feature = "serve")]
 pub use serve::{serve, serve_until, start};
 
+#[cfg(feature = "io-uring")]
+pub use serve::start_uring;
+
 #[cfg(feature = "runtime")]
 pub mod runtime;
 

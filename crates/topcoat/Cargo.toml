@@ -120,6 +120,10 @@ icon-iconify = [
 	"topcoat-icon-macro/iconify",
 	"topcoat-icon/iconify-build",
 ]
+io-uring = [
+	"serve",
+	"topcoat-router/io-uring",
+]
 jiff = [
 	"topcoat-l10n?/jiff",
 ]

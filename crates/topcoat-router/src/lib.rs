@@ -29,6 +29,8 @@ mod router;
 mod service;
 #[cfg(feature = "tower")]
 pub mod tower;
+#[cfg(feature = "io-uring")]
+mod uring;
 mod trailing_slash;
 mod urlencoded;
 
@@ -57,4 +59,6 @@ pub use route::*;
 pub use router::*;
 #[cfg(feature = "serve")]
 pub use service::*;
+#[cfg(feature = "io-uring")]
+pub use uring::serve_uring_blocking;
 pub use trailing_slash::*;
