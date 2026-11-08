@@ -1,0 +1,1030 @@
+    Updating crates.io index
+     Locking 4 packages to highest compatible versions
+      Adding io-uring v0.6.4 (available: v0.7.15)
+      Adding socket2 v0.4.10
+      Adding socket2 v0.5.10 (available: v0.6.5)
+      Adding tokio-uring v0.5.0
+ Downloading crates ...
+  Downloaded mime v0.3.17
+  Downloaded serde_spanned v1.1.1
+  Downloaded equivalent v1.0.2
+  Downloaded cfg-if v1.0.4
+  Downloaded block-buffer v0.12.0
+  Downloaded alloc-no-stdlib v2.0.4
+  Downloaded alloc-stdlib v0.2.4
+  Downloaded futures-task v0.3.32
+  Downloaded crypto-common v0.2.1
+  Downloaded compression-core v0.4.32
+  Downloaded displaydoc v0.2.6
+  Downloaded futures-core v0.3.32
+  Downloaded http-body v1.0.1
+  Downloaded potential_utf v0.1.5
+  Downloaded cpufeatures v0.3.0
+  Downloaded inventory v0.3.24
+  Downloaded futures-channel v0.3.32
+  Downloaded futures-macro v0.3.32
+  Downloaded ref-cast v1.0.25
+  Downloaded http-body-util v0.1.3
+  Downloaded powerfmt v0.2.0
+  Downloaded ref-cast-impl v1.0.25
+  Downloaded utf8_iter v1.0.4
+  Downloaded tokio-macros v2.7.0
+  Downloaded futures-sink v0.3.32
+  Downloaded siphasher v1.0.3
+  Downloaded sha1 v0.10.6
+  Downloaded deranged v0.5.8
+  Downloaded data-encoding v2.10.0
+  Downloaded mime_guess v2.0.5
+  Downloaded crc32fast v1.5.0
+  Downloaded toml_datetime v1.1.1+spec-1.1.0
+  Downloaded zmij v1.0.21
+  Downloaded time-macros v0.2.29
+  Downloaded synstructure v0.13.2
+  Downloaded simd-adler32 v0.3.9
+  Downloaded toml_writer v1.1.1+spec-1.1.0
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded quote v1.0.45
+  Downloaded getrandom v0.4.2
+  Downloaded compression-codecs v0.4.38
+  Downloaded litemap v0.8.2
+  Downloaded hybrid-array v0.4.12
+  Downloaded proc-macro2 v1.0.106
+  Downloaded sha2 v0.11.0
+  Downloaded toml_parser v1.1.2+spec-1.1.0
+  Downloaded thiserror v2.0.18
+  Downloaded cookie v0.18.1
+  Downloaded smallvec v1.15.1
+  Downloaded unicase v2.9.0
+  Downloaded bitflags v2.11.0
+  Downloaded log v0.4.29
+  Downloaded toml v1.1.2+spec-1.1.0
+  Downloaded thiserror-impl v2.0.18
+  Downloaded unicode-ident v1.0.24
+  Downloaded miniz_oxide v0.8.9
+  Downloaded async-compression v0.4.42
+  Downloaded serde v1.0.228
+  Downloaded socket2 v0.6.3
+  Downloaded bytes v1.11.1
+  Downloaded rand v0.8.6
+  Downloaded toml_edit v0.25.12+spec-1.1.0
+  Downloaded flate2 v1.1.9
+  Downloaded serde_core v1.0.228
+  Downloaded serde_derive v1.0.228
+  Downloaded http v1.4.0
+  Downloaded mio v1.2.0
+  Downloaded typenum v1.20.0
+  Downloaded memchr v2.8.0
+  Downloaded brotli-decompressor v5.0.3
+  Downloaded indexmap v2.14.0
+  Downloaded hyper-util v0.1.20
+  Downloaded rand v0.9.4
+  Downloaded hyper v1.9.0
+  Downloaded futures-util v0.3.32
+  Downloaded serde_json v1.0.149
+  Downloaded h2 v0.4.13
+  Downloaded hashbrown v0.17.0
+  Downloaded tokio-util v0.7.18
+  Downloaded tower-http v0.7.0
+  Downloaded winnow v1.0.3
+  Downloaded zerocopy v0.8.48
+  Downloaded time v0.3.49
+  Downloaded syn v2.0.117
+  Downloaded syn v3.0.6
+  Downloaded brotli v8.0.4
+  Downloaded libc v0.2.190
+  Downloaded tokio v1.51.1
+   Compiling libc v0.2.190
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling unicode-ident v1.0.24
+   Compiling cfg-if v1.0.4
+   Compiling serde_core v1.0.228
+   Compiling typenum v1.20.0
+   Compiling syn v2.0.117
+   Compiling version_check v0.9.5
+   Compiling generic-array v0.14.7
+   Compiling itoa v1.0.18
+   Compiling getrandom v0.2.17
+   Compiling bytes v1.11.1
+   Compiling rand_core v0.6.4
+   Compiling pin-project-lite v0.2.17
+   Compiling errno v0.3.14
+   Compiling hashbrown v0.17.0
+   Compiling equivalent v1.0.2
+   Compiling signal-hook-registry v1.4.8
+   Compiling crypto-common v0.1.7
+   Compiling mio v1.2.0
+   Compiling indexmap v2.14.0
+   Compiling socket2 v0.6.3
+   Compiling futures-core v0.3.32
+   Compiling http v1.4.0
+   Compiling futures-sink v0.3.32
+   Compiling subtle v2.6.1
+   Compiling slab v0.4.12
+   Compiling tokio-macros v2.7.0
+   Compiling memchr v2.8.0
+   Compiling tokio v1.51.1
+   Compiling thiserror v2.0.18
+   Compiling winnow v1.0.3
+   Compiling thiserror-impl v2.0.18
+   Compiling toml_parser v1.1.2+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling zerocopy v0.8.48
+   Compiling futures-macro v0.3.32
+   Compiling futures-task v0.3.32
+   Compiling heck v0.5.0
+   Compiling cpufeatures v0.2.17
+   Compiling futures-util v0.3.32
+   Compiling block-buffer v0.10.4
+   Compiling smallvec v1.15.1
+   Compiling base64 v0.22.1
+   Compiling stable_deref_trait v1.2.1
+   Compiling elsa v1.11.2
+   Compiling digest v0.10.7
+   Compiling toml_edit v0.25.12+spec-1.1.0
+   Compiling getrandom v0.3.4
+   Compiling ppv-lite86 v0.2.21
+   Compiling siphasher v1.0.3
+   Compiling once_cell v1.21.4
+   Compiling zmij v1.0.21
+   Compiling tracing-core v0.1.36
+   Compiling topcoat-core v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-core)
+   Compiling proc-macro-crate v3.5.0
+   Compiling syn v3.0.6
+   Compiling httparse v1.10.1
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling crc32fast v1.5.0
+   Compiling serde_json v1.0.149
+   Compiling alloc-stdlib v0.2.4
+   Compiling topcoat-view v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-view)
+   Compiling tracing v0.1.44
+   Compiling tokio-util v0.7.18
+   Compiling simd-adler32 v0.3.9
+   Compiling adler2 v2.0.1
+   Compiling serde v1.0.228
+   Compiling miniz_oxide v0.8.9
+   Compiling rand_core v0.9.5
+   Compiling topcoat-core-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-core/grammar)
+   Compiling brotli-decompressor v5.0.3
+   Compiling http-body v1.0.1
+   Compiling serde_derive v1.0.228
+   Compiling percent-encoding v2.3.2
+   Compiling flate2 v1.1.9
+   Compiling brotli v8.0.4
+   Compiling rand_chacha v0.9.0
+   Compiling atomic-waker v1.1.2
+   Compiling compression-core v0.4.32
+   Compiling fnv v1.0.7
+   Compiling time-core v0.1.9
+   Compiling unicase v2.9.0
+   Compiling num-conv v0.2.2
+   Compiling time-macros v0.2.29
+   Compiling mime_guess v2.0.5
+   Compiling h2 v0.4.13
+   Compiling compression-codecs v0.4.38
+   Compiling rand v0.9.4
+   Compiling sha1 v0.10.6
+   Compiling futures-channel v0.3.32
+   Compiling hybrid-array v0.4.12
+   Compiling httpdate v1.0.3
+   Compiling tower-service v0.3.3
+   Compiling deranged v0.5.8
+   Compiling tower-layer v0.3.3
+   Compiling log v0.4.29
+   Compiling ref-cast v1.0.25
+   Compiling powerfmt v0.2.0
+   Compiling data-encoding v2.10.0
+   Compiling hyper v1.9.0
+   Compiling tungstenite v0.29.0
+   Compiling time v0.3.49
+   Compiling async-compression v0.4.42
+   Compiling form_urlencoded v1.2.2
+   Compiling ref-cast-impl v1.0.25
+   Compiling ryu v1.0.23
+   Compiling sync_wrapper v1.0.2
+   Compiling mime v0.3.17
+   Compiling bitflags v2.11.0
+   Compiling tower-http v0.7.0
+   Compiling tower v0.5.3
+   Compiling serde_urlencoded v0.7.1
+   Compiling hyper-util v0.1.20
+   Compiling tokio-tungstenite v0.29.0
+   Compiling block-buffer v0.12.0
+   Compiling crypto-common v0.2.1
+   Compiling http-body-util v0.1.3
+   Compiling serde_path_to_error v0.1.20
+   Compiling matchit v0.9.2
+   Compiling inventory v0.3.24
+   Compiling const-oid v0.10.2
+   Compiling ipnet v2.12.2
+   Compiling digest v0.11.3
+   Compiling topcoat-view-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-view/grammar)
+   Compiling topcoat-router v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-router)
+   Compiling serde_spanned v1.1.1
+   Compiling cpufeatures v0.3.0
+   Compiling toml_writer v1.1.1+spec-1.1.0
+   Compiling sha2 v0.11.0
+   Compiling toml v1.1.2+spec-1.1.0
+   Compiling topcoat-view-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-view/macro)
+   Compiling inout v0.1.4
+   Compiling cipher v0.4.4
+   Compiling universal-hash v0.5.1
+   Compiling opaque-debug v0.3.1
+   Compiling polyval v0.6.2
+   Compiling topcoat-asset v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-asset)
+   Compiling topcoat-font v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-font)
+   Compiling topcoat-asset-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-asset/grammar)
+   Compiling topcoat-asset-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-asset/macro)
+   Compiling ghash v0.5.1
+   Compiling ctr v0.9.2
+   Compiling aes v0.8.4
+   Compiling rand_chacha v0.3.1
+   Compiling hmac v0.12.1
+   Compiling aead v0.5.2
+   Compiling cookie v0.18.1
+   Compiling aes-gcm v0.10.3
+   Compiling hkdf v0.12.4
+   Compiling rand v0.8.6
+   Compiling sha2 v0.10.9
+   Compiling getrandom v0.4.2
+   Compiling topcoat-runtime v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-runtime)
+   Compiling topcoat-icon v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-icon)
+   Compiling topcoat-icon-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-icon/grammar)
+   Compiling topcoat-cookie v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-cookie)
+   Compiling topcoat-font-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-font/grammar)
+   Compiling topcoat-runtime-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-runtime/grammar)
+   Compiling topcoat-core-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-core/macro)
+   Compiling topcoat-router-grammar v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-router/grammar)
+   Compiling web-time v1.1.0
+   Compiling topcoat-session v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-session)
+   Compiling topcoat-runtime-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-runtime/macro)
+   Compiling topcoat-metadata v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-metadata)
+   Compiling topcoat-font-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-font/macro)
+   Compiling topcoat-router-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-router/macro)
+   Compiling topcoat-icon-macro v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat-icon/macro)
+   Compiling topcoat v0.11.0 (/home/hatch/workspace/topcoat-iouring/fork/crates/topcoat)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 01s
+     Running unittests src/lib.rs (target/debug/deps/topcoat_router-73d3229a565eedfa)
+
+running 621 tests
+test body::tests::a_body_over_the_limit_is_content_too_large ... ok
+test body::tests::a_body_within_the_limit_reads_in_full ... ok
+test body::tests::a_read_failure_is_a_bad_request_carrying_the_cause ... ok
+test body::tests::a_panicking_body_ends_its_stream_with_an_error ... ok
+test body::tests::usize_max_reads_without_enforcing_a_limit ... ok
+test body_limit::tests::body_limit_disabled_is_unlimited ... ok
+test body_limit::tests::body_limit_reads_the_context_limit ... ok
+test body_limit::tests::body_limit_without_a_limit_matches_the_default ... ok
+test body_limit::tests::a_router_limit_applies_to_every_route ... ok
+test body_limit::tests::a_route_limit_replaces_the_router_limit ... ok
+test body_limit::tests::requests_over_the_default_limit_are_content_too_large ... ok
+test builder::tests::a_later_value_shadows_an_earlier_one ... ok
+test body_limit::tests::disable_turns_the_limit_off ... ok
+test body_limit::tests::requests_within_the_default_limit_pass ... ok
+test builder::tests::builder_is_not_empty_after_registering_a_route ... ok
+test body_limit::tests::the_raw_body_extractor_is_not_limited ... ok
+test builder::tests::duplicate_any_method_routes_panic_on_build - should panic ... ok
+test builder::tests::layer_matching_no_route_panics - should panic ... ok
+test builder::tests::duplicate_method_and_path_panics_on_build - should panic ... ok
+test builder::tests::layer_in_an_unused_group_panics - should panic ... ok
+test builder::tests::layer_matching_part_of_a_segment_panics - should panic ... ok
+test builder::tests::layer_with_another_param_name_panics - should panic ... ok
+test builder::tests::new_builder_is_empty ... ok
+test builder::tests::layer_wrapping_a_page_builds ... ok
+test builder::tests::layer_wrapping_a_route_builds ... ok
+test builder::tests::one_unused_layer_among_used_ones_panics - should panic ... ok
+test builder::tests::root_layer_without_routes_builds ... ok
+test builder::tests::overlapping_method_sets_panic_on_build - should panic ... ok
+test builder::tests::routes_sharing_a_url_with_diverging_layers_build ... ok
+test builder::tests::route_without_methods_panics_on_build - should panic ... ok
+test compression::tests::already_encoded_responses_pass_through ... ok
+test compression::tests::a_route_configuration_replaces_the_router_configuration ... ok
+test compression::tests::a_layer_configuration_applies_to_the_routes_under_it ... ok
+test compression::tests::compresses_without_a_registered_configuration ... ok
+test compression::tests::min_size_lowers_the_compression_threshold ... ok
+test compression::tests::off_disables_compression ... ok
+test compression::tests::disabled_algorithms_are_not_offered ... ok
+test compression::tests::compresses_with_the_negotiated_algorithm ... ok
+test compression::tests::passes_through_without_accept_encoding ... ok
+test connection::tests::a_request_without_a_peer_address_has_none ... ok
+test compression::tests::small_bodies_are_not_compressed ... ok
+test connection::tests::a_context_without_a_request_has_none ... ok
+test connection::tests::reads_the_peer_address_off_the_request ... ok
+test content::css::tests::css_content_type_recognizes_css_media_types ... ok
+test content::css::tests::from_request_reads_css_body_as_text ... ok
+test content::css::tests::from_request_rejects_non_utf8_body ... ok
+test content::css::tests::into_response_sets_css_content_type ... ok
+test content::css::tests::from_request_without_css_content_type_is_bad_request ... ok
+test content::form::tests::form_content_type_recognizes_urlencoded_media_types ... ok
+test content::css::tests::optional_from_request_with_content_type_is_some ... ok
+test content::css::tests::optional_from_request_without_content_type_is_none ... ok
+test content::form::tests::from_bytes_reads_empty_optional_enum_as_none ... ok
+test content::form::tests::from_bytes_keeps_empty_required_string ... ok
+test content::form::tests::from_bytes_deserializes_into_target_type ... ok
+test content::form::tests::from_bytes_reads_empty_optional_value_as_none ... ok
+test content::form::tests::from_bytes_reads_present_optional_value ... ok
+test content::form::tests::from_bytes_reads_present_optional_enum ... ok
+test content::form::tests::from_bytes_reads_empty_optional_string_as_none ... ok
+test content::form::tests::from_bytes_reads_missing_optional_key_as_none ... ok
+test content::form::tests::from_bytes_rejects_empty_required_number ... ok
+test content::form::tests::from_bytes_rejects_values_that_do_not_match_the_target ... ok
+test content::form::tests::from_request_post_without_content_type_is_bad_request ... ok
+test content::form::tests::from_request_reads_body_for_post ... ok
+test content::form::tests::from_request_reads_query_for_get ... ok
+test content::form::tests::optional_from_request_get_with_query_is_some ... ok
+test content::form::tests::into_response_serializes_form_with_content_type ... ok
+test content::form::tests::optional_from_request_get_without_query_is_none ... ok
+test content::form::tests::optional_from_request_post_without_content_type_is_none ... ok
+test content::form::tests::raw_form_get_yields_query_bytes ... ok
+test content::form::tests::optional_from_request_post_with_content_type_is_some ... ok
+test content::form::tests::raw_form_post_without_content_type_is_bad_request ... ok
+test content::form::tests::raw_form_post_yields_body_bytes ... ok
+test content::html::tests::from_request_reads_html_body_as_text ... ok
+test content::html::tests::html_content_type_recognizes_html_media_types ... ok
+test content::html::tests::from_request_rejects_non_utf8_body ... ok
+test content::html::tests::from_request_without_html_content_type_is_bad_request ... ok
+test content::html::tests::into_response_sets_html_content_type ... ok
+test content::json::tests::from_bytes_deserializes_into_target_type ... ok
+test content::html::tests::optional_from_request_without_content_type_is_none ... ok
+test content::html::tests::optional_from_request_with_content_type_is_some ... ok
+test content::js::tests::into_response_sets_javascript_content_type ... ok
+test content::json::tests::from_bytes_rejects_invalid_syntax ... ok
+test content::json::tests::from_bytes_reports_the_path_of_a_value_error ... ok
+test content::json::tests::from_request_accepts_suffixed_json_content_type ... ok
+test content::json::tests::from_request_deserializes_json_body ... ok
+test content::json::tests::from_request_rejects_trailing_data ... ok
+test content::json::tests::from_request_without_json_content_type_is_bad_request ... ok
+test content::json::tests::json_content_type_recognizes_json_media_types ... ok
+test content::json::tests::into_response_serializes_json_with_content_type ... ok
+test content::json::tests::optional_from_request_with_content_type_is_some ... ok
+test content::json::tests::optional_from_request_without_content_type_is_none ... ok
+test content::sitemap::tests::a_priority_outside_the_range_is_an_error ... ok
+test content::sitemap::tests::a_relative_location_without_a_base_url_panics - should panic ... ok
+test content::sitemap::tests::an_empty_sitemap_is_an_empty_urlset ... ok
+test content::sitemap::tests::absolute_locations_are_used_as_is ... ok
+test content::json::tests::from_request_rejects_a_body_over_the_limit ... ok
+test content::sitemap::tests::relative_locations_resolve_against_the_base_url ... ok
+test content::sitemap::tests::every_field_is_serialized ... ok
+test content::sitemap::tests::reserved_characters_in_locations_are_escaped ... ok
+test content::sse::event::tests::a_missing_last_event_id_is_none ... ok
+test content::sitemap::tests::into_response_sets_the_xml_content_type ... ok
+test content::sitemap::tests::urls_adds_every_entry_of_an_iterator ... ok
+test content::sse::event::tests::an_empty_event_is_a_blank_line ... ok
+test content::sse::event::tests::every_field_is_serialized ... ok
+test content::sse::event::tests::a_non_utf8_last_event_id_is_none ... ok
+test content::sse::event::tests::data_becomes_a_data_field ... ok
+test content::sse::event::tests::json_data_serializes_the_value ... ok
+test content::sse::event::tests::last_event_id_reads_the_header ... ok
+test content::sse::event::tests::last_event_id_reads_utf8 ... ok
+test content::sse::event::tests::line_breaks_in_the_event_type_are_an_error ... ok
+test content::sse::event::tests::line_breaks_and_null_in_the_id_are_an_error ... ok
+test content::sse::event::tests::multi_line_comments_become_one_comment_per_line ... ok
+test content::sse::event::tests::multi_line_data_becomes_one_field_per_line ... ok
+test content::sse::response::tests::a_stream_error_ends_the_body ... ok
+test content::sse::response::tests::events_defer_the_keep_alive ... ok
+test content::sse::response::tests::keep_alives_fill_idle_gaps ... ok
+test content::sse::response::tests::the_response_streams_events_with_event_stream_headers ... ok
+test content::view::tests::a_delivery_in_the_context_wins_over_the_accept_header ... ok
+test content::view::tests::a_failure_in_the_same_poll_as_the_emission_is_a_server_error ... ok
+test content::view::tests::a_failure_after_the_first_content_ends_the_stream_with_an_error ... ok
+test content::view::tests::a_framed_live_page_sends_its_snapshot_then_one_frame_per_swap ... ok
+test content::view::tests::a_framed_redirect_before_the_first_content_is_a_real_redirect ... ok
+test content::view::tests::a_framed_settled_page_is_one_snapshot_frame ... ok
+test content::view::tests::a_framed_redirect_after_the_first_content_is_a_redirect_frame ... ok
+test content::view::tests::a_framed_view_handle_response_is_a_snapshot_frame_with_its_status ... ok
+test content::view::tests::a_live_page_streams_its_first_content_then_its_swaps ... ok
+test content::view::tests::a_live_view_applies_its_declared_status_and_headers ... ok
+test content::view::tests::a_page_with_a_settled_region_responds_with_plain_html ... ok
+test content::view::tests::a_panic_after_the_first_content_ends_the_stream_with_an_error ... ok
+test content::view::tests::a_live_page_streams_below_its_layouts ... ok
+test content::view::tests::a_redirect_after_the_first_content_streams_a_navigation_script ... ok
+test content::view::tests::a_redirect_before_the_first_content_is_a_real_redirect ... ok
+test content::view::tests::a_request_without_a_delivery_gets_html ... ok
+test content::view::tests::a_see_other_before_the_first_content_is_a_real_redirect ... ok
+test content::view::tests::a_request_accepting_frames_gets_them ... ok
+test content::view::tests::a_see_other_after_the_first_content_streams_a_navigation_script ... ok
+test content::view::tests::a_request_accepting_only_html_gets_html ... ok
+test content::view::tests::a_view_failing_before_its_first_content_is_a_server_error ... ok
+test content::view::tests::a_settled_view_applies_its_declared_status_and_headers ... ok
+test content::view::tests::a_view_handle_response_carries_its_status_and_headers ... ok
+test content::view::tests::framed_sibling_regions_name_their_own_region ... ok
+test content::view::tests::region_ids_are_stable_across_requests ... ok
+test content::view::tests::sibling_regions_stream_their_own_swaps ... ok
+test content::view::tests::the_navigation_script_escapes_the_redirect_target ... ok
+test content::view::tests::the_navigation_script_keeps_a_non_ascii_redirect_target ... ok
+test content::wasm::tests::into_response_sends_the_media_type_without_parameters ... ok
+test content::view::tests::the_swap_applier_is_sent_once_ahead_of_the_first_swap ... ok
+test content::websocket::message::tests::binary_message_converts_from_bytes ... ok
+test content::websocket::message::tests::into_data_returns_the_payload ... ok
+test content::websocket::message::tests::close_frame_roundtrips_through_tungstenite ... ok
+test content::wasm::tests::into_response_sets_wasm_content_type ... ok
+test content::websocket::message::tests::into_text_validates_utf8 ... ok
+test content::websocket::message::tests::raw_frames_are_not_surfaced ... ok
+test content::websocket::message::tests::utf8_bytes_rejects_invalid_utf8 ... ok
+test content::websocket::message::tests::text_message_converts_from_strings ... ok
+test content::websocket::upgrade::tests::conforming_handshake_without_upgradable_connection_is_rejected ... ok
+test content::websocket::upgrade::tests::invalid_websocket_keys_are_bad_requests ... ok
+test content::websocket::upgrade::tests::missing_or_wrong_headers_are_bad_requests ... ok
+test content::websocket::upgrade::tests::negotiates_the_first_supported_protocol ... ok
+test content::websocket::upgrade::tests::negotiation_without_overlap_or_request_selects_nothing ... ok
+test content::websocket::upgrade::tests::non_get_method_is_method_not_allowed ... ok
+test content::websocket::upgrade::tests::valid_websocket_keys_have_the_rfc_6455_shape ... ok
+test endpoint::tests::alias_does_not_override_explicit_head ... ok
+test endpoint::tests::alias_points_head_at_get ... ok
+test endpoint::tests::alias_without_get_leaves_head_absent ... ok
+test endpoint::tests::any_is_absent_by_default ... ok
+test endpoint::tests::at_matches_a_url_to_its_endpoint ... ok
+test endpoint::tests::at_returns_none_for_an_unmatched_url ... ok
+test endpoint::tests::empty_endpoint_has_no_routes ... ok
+test endpoint::tests::insert_any_does_not_affect_per_method_lookups ... ok
+test endpoint::tests::insert_overwrites_the_same_method ... ok
+test endpoint::tests::inserts_and_reads_back_extension_methods ... ok
+test endpoint::tests::inserts_and_reads_back_standard_methods ... ok
+test endpoint::tests::methods_lists_standard_then_extension ... ok
+test endpoint::tests::push_assigns_sequential_indices ... ok
+test content::websocket::upgrade::tests::negotiates_a_subprotocol_with_the_client ... ok
+test content::websocket::upgrade::tests::plain_request_to_a_websocket_route_is_a_bad_request ... ok
+test error::redirect::tests::ascii_targets_are_kept_as_is ... ok
+test error::redirect::tests::control_characters_are_percent_encoded ... ok
+test endpoint::tests::push_rejects_conflicting_paths - should panic ... ok
+test error::redirect::tests::encoded_targets_are_not_encoded_twice ... ok
+test error::redirect::tests::non_ascii_targets_are_percent_encoded ... ok
+test error::redirect::tests::other_errors_are_handed_back ... ok
+test error::service_unavailable::tests::keeps_the_retry_after_it_was_built_with ... ok
+test error::redirect::tests::the_location_converts_back_to_a_str ... ok
+test error::redirect::tests::the_location_of_a_redirect_error_is_extracted ... ok
+test error::service_unavailable::tests::reads_as_busy_rather_than_broken ... ok
+test error::service_unavailable::tests::responds_503_with_a_retry_after_header ... ok
+test error::tests::a_service_unavailable_error_maps_to_503_not_500 ... ok
+test error::tests::a_too_many_requests_error_maps_to_429_not_500 ... ok
+test error::tests::a_shared_error_still_maps_to_its_status ... ok
+test error::tests::an_error_that_is_not_on_the_list_still_maps_to_500 ... ok
+test error::too_many_requests::tests::keeps_the_retry_after_it_was_built_with ... ok
+test error::too_many_requests::tests::names_the_caller_not_the_server ... ok
+test href::tests::a_group_only_path_addresses_the_root ... ok
+test error::too_many_requests::tests::responds_429_with_a_retry_after_header ... ok
+test href::tests::a_query_that_serializes_to_nothing_demands_a_bare_request ... ok
+test href::tests::a_set_form_overrides_the_context_form ... ok
+test href::tests::a_specified_query_must_match_the_request_query ... ok
+test href::tests::an_absolute_root_url_keeps_its_slash ... ok
+test href::tests::builder_appends_queries_and_replaces_the_fragment ... ok
+test href::tests::an_unspecified_query_is_left_out_of_the_comparison ... ok
+test href::tests::concatenates_query_items ... ok
+test href::tests::fills_a_catch_all_with_one_segment_per_element ... ok
+test href::tests::fills_parameters_in_declaration_order ... ok
+test href::tests::is_current_compares_the_encoded_path ... ok
+test href::tests::is_current_fills_in_the_parameters ... ok
+test href::tests::keeps_a_segment_that_only_starts_with_a_dot ... ok
+test href::tests::is_current_on_the_request_path ... ok
+test href::tests::leaves_the_unreserved_characters_of_a_segment_alone ... ok
+test href::tests::percent_encodes_a_segment ... ok
+test href::tests::percent_encodes_each_segment_of_a_catch_all ... ok
+test href::tests::percent_encodes_query_values ... ok
+test href::tests::rejects_a_current_segment_inside_a_catch_all - should panic ... ok
+test href::tests::rejects_a_parameter_name_mismatch - should panic ... ok
+test href::tests::rejects_a_parameter_spanning_several_segments - should panic ... ok
+test href::tests::rejects_a_parent_segment - should panic ... ok
+test href::tests::rejects_an_empty_catch_all - should panic ... ok
+test href::tests::rejects_an_empty_segment - should panic ... ok
+test href::tests::rejects_an_unfilled_path_parameter - should panic ... ok
+test href::tests::rejects_more_parameters_than_the_path_declares - should panic ... ok
+test href::tests::resolves_a_relative_url_with_query_and_fragment ... ok
+test href::tests::skips_group_segments ... ok
+test href::tests::skips_query_items_that_serialize_to_nothing ... ok
+test href::tests::resolves_an_absolute_url_behind_the_base_url ... ok
+test href::tests::the_fragment_is_left_out_of_the_comparison ... ok
+test href::tests::the_context_form_turns_a_url_absolute ... ok
+test href::tests::the_macro_takes_the_parameters_as_a_list ... ok
+test href::tests::the_macro_without_parameters_resolves_a_static_path ... ok
+test href::tests::the_root_href_is_current_on_the_root ... ok
+test href::tests::the_query_comparison_ignores_order_and_encoding ... ok
+test href::tests::writes_a_static_path_verbatim ... ok
+test href::tests::writes_no_query_without_items ... ok
+test href::tests::writes_the_root_path_as_a_slash ... ok
+test layer::strip_prefix::tests::strip_path_prefix_requires_a_segment_boundary ... ok
+test layer::strip_prefix::tests::strip_path_prefix_matches_route_segments ... ok
+test layer::strip_prefix::tests::strip_prefix_can_be_scoped_to_a_different_route_pattern ... ok
+test layer::strip_prefix::tests::strip_prefix_leaves_a_non_matching_path_unchanged ... ok
+test layer::tests::for_path_distinguishes_param_names ... ok
+test layer::tests::for_path_includes_group_segments ... ok
+test layer::tests::for_path_orders_prefix_layers_least_to_most_specific ... ok
+test layer::tests::for_path_puts_pathless_layers_outermost ... ok
+test layer::strip_prefix::tests::strip_prefix_rewrites_the_request_uri ... ok
+test layer::strip_prefix::tests::strip_prefix_rewrites_grouped_and_parameterized_routes ... ok
+test layer::tests::for_path_runs_the_later_of_a_shared_path_first ... ok
+test layer::tests::for_path_rejects_partial_segments ... ok
+test layer::tests::layer_fn_exposes_its_path ... ok
+test layer::tests::run_invokes_the_route_terminal_when_no_layers_remain ... ok
+test layer::tests::run_resolves_the_method_not_allowed_terminal ... ok
+test layer::tests::run_lets_a_layer_short_circuit_without_calling_next ... ok
+test layer::tests::run_walks_layers_in_order_before_the_terminal ... ok
+test methods::tests::methods_values_convert_losslessly ... ok
+test methods::tests::slices_arrays_and_vectors_convert_to_sets ... ok
+test module::router::tests::does_not_own_other_trees_or_shared_prefixes ... ok
+test methods::tests::a_single_method_converts_without_allocating ... ok
+test module::router::tests::fresh_builder_converts_to_empty_router_builder ... ok
+test module::router::tests::nested_static_segments ... ok
+test module::router::tests::override_kind_catch_all ... ok
+test module::router::tests::override_applies_at_intermediate_segment ... ok
+test module::router::tests::override_kind_param ... ok
+test module::router::tests::override_kind_group_strips_from_url ... ok
+test module::router::tests::override_kind_static_promotes_group_module ... ok
+test module::router::tests::owns_root_and_descendants ... ok
+test module::router::tests::override_rename_is_used_verbatim ... ok
+test module::router::tests::pages_in_one_module_with_distinct_relative_paths_both_register ... ok
+test module::router::tests::registering_a_page_is_observable_after_conversion ... ok
+test module::router::tests::relative_path_of_root_is_empty ... ok
+test module::router::tests::relative_path_requires_module_boundary - should panic ... ok
+test module::router::tests::relative_path_strips_root_prefix ... ok
+test module::router::tests::relative_path_outside_root_panics - should panic ... ok
+test module::router::tests::resolve_path_appends_relative_path ... ok
+test module::router::tests::resolve_path_applies_segment_overrides_before_relative_path ... ok
+test module::router::tests::resolve_path_at_root_module ... ok
+test module::router::tests::resolve_path_keeps_a_relative_trailing_slash ... ok
+test module::router::tests::resolve_path_without_relative_path_is_module_path ... ok
+test module::router::tests::resolve_path_rejects_a_trailing_slash_at_the_root_module - should panic ... ok
+test module::router::tests::resolve_path_root_relative_path_adds_a_trailing_slash ... ok
+test module::router::tests::root_maps_to_empty_path ... ok
+test module::router::tests::segment_after_resource_panics - should panic ... ok
+test module::router::tests::static_segment_is_kebab_cased ... ok
+test module::router::tests::underscore_module_is_a_group ... ok
+test module::segment::tests::get_missing_returns_none ... ok
+test module::segment::tests::register_and_get ... ok
+test module::segment::tests::register_duplicate_panics - should panic ... ok
+test origin::tests::a_route_policy_does_not_apply_to_unmatched_requests ... ok
+test origin::tests::a_route_policy_replaces_the_router_policy ... ok
+test origin::tests::a_layout_policy_applies_to_the_pages_under_it ... ok
+test origin::tests::cross_origin_safe_methods_pass ... ok
+test origin::tests::cross_origin_unsafe_methods_are_denied ... ok
+test origin::tests::disabled_policy_passes_everything ... ok
+test origin::tests::cross_origin_websocket_upgrades_are_denied ... ok
+test origin::tests::matching_origin_and_host_pass ... ok
+test origin::tests::a_router_policy_applies_to_every_route ... ok
+test origin::tests::mismatched_origin_and_host_are_denied_for_unsafe_methods ... ok
+test origin::tests::non_browser_requests_pass ... ok
+test origin::tests::same_origin_websocket_upgrades_pass ... ok
+test origin::tests::same_origin_requests_pass ... ok
+test origin::tests::trusted_origins_pass ... ok
+test page::tests::for_path_keeps_the_earlier_of_a_shared_path_outside ... ok
+test page::tests::for_path_orders_prefix_layouts_least_to_most_specific ... ok
+test page::tests::for_path_rejects_partial_segments ... ok
+test origin::tests::the_default_policy_applies_without_registration ... ok
+test origin::tests::unmatched_requests_are_verified ... ok
+test path::tests::catch_all_segment ... ok
+test path::tests::catch_all_empty_name - should panic ... ok
+test path::tests::display_roundtrip ... ok
+test path::tests::from_str_accepts_valid_paths ... ok
+test path::tests::empty_segment - should panic ... ok
+test path::tests::from_str_reports_errors ... ok
+test path::tests::group_invalid_char - should panic ... ok
+test path::tests::group_empty_name - should panic ... ok
+test path::tests::group_invalid_start - should panic ... ok
+test path::tests::group_missing_close - should panic ... ok
+test path::tests::group_segment ... ok
+test path::tests::join_appends_segments ... ok
+test path::tests::join_drops_a_trailing_slash_when_segments_follow ... ok
+test path::tests::join_keeps_a_trailing_slash_when_nothing_follows ... ok
+test path::tests::join_root_on_either_side_is_identity ... ok
+test path::tests::matches_catch_all ... ok
+test path::tests::matches_group_only_path_is_root ... ok
+test path::tests::matches_catch_all_requires_a_segment ... ok
+test path::tests::matches_catch_all_swallows_empty_segments ... ok
+test path::tests::matches_ignores_groups ... ok
+test path::tests::matches_is_case_sensitive ... ok
+test path::tests::matches_non_origin_form_urls ... ok
+test path::tests::matches_param_captures_any_segment ... ok
+test path::tests::matches_rejects_empty_segments ... ok
+test path::tests::matches_rejects_partial_segment ... ok
+test path::tests::matches_rejects_too_few_segments ... ok
+test path::tests::matches_rejects_trailing_segments ... ok
+test path::tests::matches_root ... ok
+test path::tests::matches_static_exact ... ok
+test path::tests::matches_static_mismatch ... ok
+test path::tests::matches_root_rejects_doubled_slash ... ok
+test path::tests::matches_trailing_slash_exactly ... ok
+test path::tests::matches_treats_percent_encoding_as_opaque ... ok
+test path::tests::new_panics_on_invalid - should panic ... ok
+test path::tests::new_validates_in_const_context ... ok
+test path::tests::param_empty_name - should panic ... ok
+test path::tests::only_param_and_catch_all_segments_capture ... ok
+test path::tests::param_invalid_char - should panic ... ok
+test path::tests::param_invalid_start - should panic ... ok
+test path::tests::param_missing_close - should panic ... ok
+test path::tests::param_segment ... ok
+test path::tests::path_buf_add_assign_path ... ok
+test path::tests::param_with_underscore ... ok
+test path::tests::path_display ... ok
+test path::tests::path_root_slash_normalized ... ok
+test path::tests::path_segments ... ok
+test path::tests::path_segments_from_both_ends_meet_in_the_middle ... ok
+test path::tests::path_segments_from_the_back ... ok
+test path::tests::path_single_segment ... ok
+test path::tests::path_starts_with_distinguishes_param_names ... ok
+test path::tests::path_starts_with_includes_groups ... ok
+test path::tests::path_starts_with_longer_prefix ... ok
+test path::tests::path_starts_with_match ... ok
+test path::tests::path_starts_with_no_match ... ok
+test path::tests::path_starts_with_rejects_partial_segment ... ok
+test path::tests::path_to_matchit_empty ... ok
+test path::tests::path_to_matchit_group_only_is_root ... ok
+test path::tests::path_starts_with_trailing_slash ... ok
+test path::tests::path_to_matchit_keeps_trailing_slash ... ok
+test path::tests::path_to_matchit_no_groups ... ok
+test path::tests::path_to_matchit_strips_groups ... ok
+test path::tests::pathbuf_add_assign ... ok
+test path::tests::pathbuf_add_assign_trailing_slash ... ok
+test path::tests::pathbuf_from_iterator ... ok
+test path::tests::pathbuf_deref_to_path ... ok
+test path::tests::pathbuf_new_is_empty ... ok
+test path::tests::pathbuf_to_owned_roundtrip ... ok
+test path::tests::root_path_yields_no_segments_from_either_end ... ok
+test path::tests::static_segment ... ok
+test path::tests::trailing_slash_is_an_empty_last_segment ... ok
+test path::tests::underscore_leading_ident ... ok
+test path::tests::static_with_braces - should panic ... ok
+test path_param::tests::a_path_without_parameters_captures_nothing ... ok
+test path_param::tests::decodes_a_single_segment ... ok
+test path_param::tests::iterates_from_either_end ... ok
+test path_param::tests::iteration_carries_both_views_of_a_catch_all ... ok
+test path_param::tests::keeps_a_catch_all_tail_raw ... ok
+test path_param::tests::missing_parameter_is_absent ... ok
+test path_param::tests::only_capturing_segments_are_named ... ok
+test path_param::tests::reading_a_catch_all_as_one_segment_panics - should panic ... ok
+test path_param::tests::reading_a_missing_parameter_panics - should panic ... ok
+test path_param::tests::reading_one_segment_as_a_catch_all_panics - should panic ... ok
+test path_param::tests::reads_a_single_segment_catch_all ... ok
+test proxy::tests::a_byte_outside_ascii_spoils_its_entry_only ... ok
+test proxy::tests::a_chain_of_trusted_addresses_resolves_to_the_farthest ... ok
+test path_param::tests::segments_count_without_consuming ... ok
+test proxy::tests::a_forwarded_byte_outside_ascii_spoils_its_element_only ... ok
+test proxy::tests::a_forwarded_element_with_two_for_parameters_is_ambiguous ... ok
+test proxy::tests::a_forwarded_element_without_an_address_leaves_the_client_unknown ... ok
+test proxy::tests::a_forwarded_value_with_an_unclosed_quote_leaves_the_client_unknown ... ok
+test proxy::tests::a_host_name_panics - should panic ... ok
+test proxy::tests::a_hop_trusted_by_position_needs_no_readable_address ... ok
+test proxy::tests::a_mapped_ipv4_peer_matches_an_ipv4_network ... ok
+test proxy::tests::a_malformed_node_leaves_the_client_unknown ... ok
+test proxy::tests::a_peer_without_an_address_counts_as_the_nearest_proxy ... ok
+test proxy::tests::a_mapped_ipv4_network_is_read_as_ipv4 ... ok
+test proxy::tests::a_prefix_beyond_the_address_length_panics - should panic ... ok
+test proxy::tests::a_single_address_network_matches_that_address_only ... ok
+test proxy::tests::a_single_header_is_the_client_behind_a_trusted_peer ... ok
+test proxy::tests::a_single_header_with_a_byte_outside_ascii_is_unreadable ... ok
+test proxy::tests::a_single_header_with_more_than_one_address_is_ambiguous ... ok
+test proxy::tests::a_trusted_peer_reports_the_client ... ok
+test proxy::tests::an_ipv6_network_never_contains_an_ipv4_address ... ok
+test proxy::tests::a_trusted_peer_without_a_header_is_the_client ... ok
+test proxy::tests::a_zero_prefix_matches_everything ... ok
+test proxy::tests::an_unreadable_entry_beyond_the_client_is_never_read ... ok
+test proxy::tests::an_unreadable_entry_leaves_the_client_unknown ... ok
+test proxy::tests::an_untrusted_peer_is_the_client_whatever_the_header_says ... ok
+test proxy::tests::entries_span_several_header_lines ... ok
+test proxy::tests::forwarded_quoted_strings_may_contain_the_delimiters ... ok
+test proxy::tests::empty_entries_are_skipped ... ok
+test proxy::tests::ipv6_networks_match ... ok
+test proxy::tests::nearest_and_networks_combine ... ok
+test proxy::tests::nearest_counts_hops_out_from_the_peer ... ok
+test proxy::tests::networks_accept_parsed_values ... ok
+test proxy::tests::networks_accept_references ... ok
+test proxy::tests::ports_and_brackets_are_stripped ... ok
+test proxy::tests::the_forwarded_header_ignores_x_forwarded_for ... ok
+test proxy::tests::the_nearest_proxy_is_trusted_whatever_its_address ... ok
+test proxy::tests::the_forwarded_header_reads_the_for_parameter ... ok
+test proxy::tests::the_walk_skips_every_trusted_hop ... ok
+test proxy::tests::the_walk_stops_at_the_first_untrusted_address ... ok
+test proxy::tests::without_a_peer_or_trusted_proxies_the_client_is_unknown ... ok
+test proxy::tests::without_trusted_proxies_the_peer_is_the_client ... ok
+test query_param::tests::parse_query_params_reads_empty_optional_value_as_none ... ok
+test query_param::tests::parse_query_params_reads_present_optional_value ... ok
+test request::tests::accessors_panic_outside_a_request - should panic ... ok
+test request::tests::try_accessors_read_the_request ... ok
+test request::tests::try_accessors_return_none_outside_a_request ... ok
+test response::headers::tests::appended_headers_are_added_next_to_existing_values ... ok
+test response::headers::tests::applying_drains_the_slot ... ok
+test response::headers::tests::extending_queues_every_entry_of_a_map ... ok
+test response::tests::extensions_are_applied ... ok
+test response::tests::header_array_is_into_response ... ok
+test response::tests::byte_bodies_are_octet_stream ... ok
+test response::tests::header_map_applies_headers ... ok
+test response::tests::invalid_header_name_is_an_error ... ok
+test response::tests::headers_then_body ... ok
+test response::tests::multiple_response_parts_are_all_applied ... ok
+test response::tests::one_tuple_is_just_the_body ... ok
+test response::tests::optional_parts_are_applied_when_present ... ok
+test response::tests::parts_template_seeds_status_and_headers ... ok
+test response::tests::owned_and_borrowed_text_match ... ok
+test response::tests::response_passes_through_with_rebodied_stream ... ok
+test response::tests::response_unit_template_seeds_status_and_headers ... ok
+test response::tests::status_code_sets_status_with_empty_body ... ok
+test response::tests::status_headers_and_body ... ok
+test response::tests::str_is_text_plain ... ok
+test response::tests::status_then_body ... ok
+test response::tests::unit_is_empty_ok ... ok
+test route::directory::tests::body_is_cut_at_the_advertised_length ... ok
+test route::directory::tests::catch_all_may_have_any_name ... ok
+test route::directory::tests::changed_file_is_sent_again ... ok
+test route::directory::tests::directory_is_not_found ... ok
+test route::directory::tests::empty_and_dot_segments_are_not_found ... ok
+test route::directory::tests::encoded_separators_stay_inside_their_segment ... ok
+test route::directory::tests::future_modification_time_is_clamped_to_now ... ok
+test route::directory::tests::head_sends_the_headers_without_the_body ... ok
+test route::directory::tests::if_none_match_star_is_not_modified ... ok
+test route::directory::tests::if_none_match_star_needs_no_last_modified ... ok
+test route::directory::tests::keeps_the_path_and_directory ... ok
+test route::directory::tests::if_none_match_takes_precedence_over_if_modified_since ... ok
+test route::directory::tests::malformed_if_modified_since_sends_the_file ... ok
+test route::directory::tests::last_modified_reflects_the_file ... ok
+test route::directory::tests::missing_directory_is_not_found ... ok
+test route::directory::tests::missing_file_is_not_found ... ok
+test route::directory::tests::modification_time_before_the_epoch_omits_the_header ... ok
+test route::directory::tests::only_get_and_its_head_alias_are_served ... ok
+test route::directory::tests::parent_segments_cannot_escape_the_directory ... ok
+test route::directory::tests::path_with_a_single_segment_param_panics - should panic ... ok
+test route::directory::tests::path_without_a_catch_all_panics - should panic ... ok
+test route::directory::tests::path_through_a_file_is_not_found ... ok
+test route::directory::tests::serve_dir_registers_the_route ... ok
+test route::directory::tests::serve_dir_without_a_catch_all_panics - should panic ... ok
+test route::directory::tests::public_dir_serves_at_the_root ... ok
+test route::directory::tests::named_pipe_is_not_found ... ok
+test route::directory::tests::serves_an_empty_file ... ok
+test route::directory::tests::serves_from_the_root_prefix ... ok
+test route::directory::tests::serves_a_file_with_its_type_and_length ... ok
+test route::directory::tests::serves_nested_files ... ok
+test route::tests::option_route_index_stays_one_word ... ok
+test route::tests::route_index_wraps_and_unwraps ... ok
+test route::tests::route_index_zero_is_a_real_index ... ok
+test route::directory::tests::unknown_extension_is_an_octet_stream ... ok
+test router::tests::a_catch_all_captures_the_trailing_slash_itself ... ok
+test router::tests::a_cloned_handle_serves_a_stream_after_the_request_returned ... ok
+test route::directory::tests::unchanged_file_is_not_modified ... ok
+test router::tests::a_layer_value_shadows_route_values ... ok
+test router::tests::a_layout_can_rewrite ... ok
+test router::tests::a_page_reads_its_own_values_before_those_of_its_layouts ... ok
+test router::tests::a_page_serves_only_its_declared_methods ... ok
+test router::tests::a_page_without_a_layout_can_rewrite ... ok
+test router::tests::a_request_outside_a_router_has_no_router ... ok
+test router::tests::a_page_wrapped_by_a_layout_can_rewrite ... ok
+test router::tests::a_pathless_layer_can_replace_a_not_found_response ... ok
+test router::tests::a_rewrite_can_change_the_method_and_keeps_the_original_readable ... ok
+test router::tests::a_rewrite_can_replace_the_headers ... ok
+test router::tests::a_rewrite_carries_its_body ... ok
+test router::tests::a_rewrite_cycle_is_an_internal_server_error ... ok
+test router::tests::a_rewrite_carries_its_values_through_the_rest_of_the_chain ... ok
+test router::tests::a_rewrite_keeps_the_request_method ... ok
+test router::tests::a_rewrite_reads_the_context_of_its_target ... ok
+test router::tests::a_rewrite_serves_the_new_path ... ok
+test router::tests::a_rewrite_reruns_pathless_layers ... ok
+test router::tests::a_rewrite_swaps_the_query_and_keeps_the_original_uri_readable ... ok
+test router::tests::a_rewrite_to_the_same_method_and_path_is_a_cycle ... ok
+test router::tests::a_rewrite_to_an_unmatched_path_is_not_found ... ok
+test router::tests::a_rewrite_to_the_same_path_with_another_method_is_a_fresh_dispatch ... ok
+test router::tests::a_route_can_dispatch_an_independent_request_through_its_router ... ok
+test router::tests::a_route_reads_its_context_before_the_router_values ... ok
+test router::tests::a_seeded_dispatch_hands_its_values_to_the_route ... ok
+test router::tests::a_runaway_rewrite_chain_stops_at_the_limit ... ok
+test router::tests::any_method_route_serves_every_method ... ok
+test router::tests::base_url_is_available_to_handlers ... ok
+test router::tests::captures_catch_all_params ... ok
+test router::tests::captures_and_decodes_path_params ... ok
+test router::tests::carrying_values_does_not_carry_dispatch_state ... ok
+test router::tests::deferred_headers_land_on_an_error_response ... ok
+test router::tests::deferred_headers_land_on_a_success_response ... ok
+test router::tests::endpoint_panics_without_a_match - should panic ... ok
+test router::tests::dispatch_ignores_query_strings ... ok
+test router::tests::exposes_the_matched_endpoint_path ... ok
+test router::tests::exposes_the_matched_route ... ok
+test router::tests::group_layers_wrap_routes_at_their_stripped_url ... ok
+test router::tests::head_is_aliased_to_get ... ok
+test router::tests::head_falls_back_to_an_any_method_route ... ok
+test router::tests::handler_panics_become_internal_server_errors ... ok
+test router::tests::href_target_resolves_the_served_url_path ... ok
+test router::tests::later_rewrites_replace_values_of_the_same_type_and_keep_other_values ... ok
+test router::tests::layer_values_reach_only_the_routes_they_wrap ... ok
+test router::tests::layers_only_wrap_routes_under_their_path ... ok
+test router::tests::layers_read_their_own_values_before_running ... ok
+test router::tests::layers_run_outermost_first_by_path_specificity ... ok
+test router::tests::layers_see_the_context_of_the_matched_route_only ... ok
+test router::tests::layers_wrap_catch_all_routes ... ok
+test router::tests::layout_only_wraps_pages_under_its_path ... ok
+test router::tests::layers_wrap_percent_encoded_param_urls ... ok
+test router::tests::layouts_reach_only_the_pages_they_wrap ... ok
+test router::tests::layout_values_shadow_layer_values_and_inner_layers_shadow_outer_ones ... ok
+test router::tests::matched_path_wrong_method_is_method_not_allowed ... ok
+test router::tests::matching_layouts_wrap_a_page_outermost_first ... ok
+test router::tests::method_not_allowed_runs_only_the_pathless_layers ... ok
+test router::tests::multi_method_route_serves_each_of_its_methods ... ok
+test router::tests::original_uri_is_the_request_uri_without_a_rewrite ... ok
+test router::tests::path_layers_do_not_wrap_not_found_responses ... ok
+test router::tests::page_renders_as_html ... ok
+test router::tests::pathless_layers_wrap_method_not_allowed_responses ... ok
+test router::tests::reads_the_matched_endpoint ... ok
+test router::tests::pathless_layers_wrap_not_found_responses ... ok
+test router::tests::redirect_runs_the_pathless_layers_only ... ok
+test router::tests::redirect_applies_to_every_method ... ok
+test router::tests::route_panics_without_a_matched_route - should panic ... ok
+test router::tests::redirect_sends_the_other_form_to_the_declared_form ... ok
+test router::tests::rendering_panic_becomes_internal_server_error ... ok
+test router::tests::router_values_are_available_to_handlers ... ok
+test router::tests::routes_at_both_forms_are_left_alone ... ok
+test router::tests::routes_sharing_a_url_with_the_same_layers_build ... ok
+test router::tests::routes_sharing_a_url_keep_their_own_layers ... ok
+test router::tests::routes_to_the_matching_method ... ok
+test router::tests::seeded_values_survive_rewrites_and_yield_to_values_a_rewrite_carries ... ok
+test router::tests::serve_checks_the_method_on_the_other_form ... ok
+test router::tests::serve_keeps_the_requested_uri ... ok
+test router::tests::serve_handles_both_forms ... ok
+test router::tests::specific_method_route_wins_over_any ... ok
+test router::tests::strict_leaves_the_other_form_unmatched ... ok
+test router::tests::stripping_a_prefix_keeps_the_original_uri_without_a_rewrite ... ok
+test router::tests::the_client_ip_is_resolved_as_the_request_arrives ... ok
+test router::tests::the_client_ip_is_the_peer_without_trusted_proxies ... ok
+test router::tests::the_client_ip_resolves_through_trusted_proxies ... ok
+test router::tests::the_endpoint_path_drops_group_segments ... ok
+test router::tests::the_route_context_is_built_once_per_router ... ok
+test router::tests::the_layer_context_is_built_once_per_router ... ok
+test router::tests::the_declared_form_is_served ... ok
+test router::tests::try_accessors_report_a_partial_match ... ok
+test router::tests::try_accessors_report_no_match ... ok
+test router::tests::the_routers_own_values_take_precedence_over_seeded_values ... ok
+test router::tests::unmatched_path_is_not_found ... ok
+test router::tests::values_passed_to_handle_with_shadow_route_values ... ok
+test service::tests::handler_panic_returns_500_and_server_keeps_running ... ok
+test service::tests::requests_carry_the_peer_address_of_their_connection ... ok
+test service::tests::response_body_panic_does_not_stop_server ... ok
+test service::tests::returns_once_the_shutdown_signal_fires ... ok
+test service::tests::serves_over_a_unix_socket ... ok
+test tower::tests::a_mounted_service_error_surfaces_as_a_tower_service_error ... ok
+test tower::tests::a_strip_prefix_layer_rewrites_the_uri_a_tower_route_sees ... ok
+test tower::tests::a_tower_route_serves_only_its_declared_methods ... ok
+test tower::tests::an_any_route_responds_to_every_method ... ok
+test tower::tests::calling_the_chain_twice_errors ... ok
+test tower::tests::calling_the_chain_without_the_relay_errors ... ok
+test tower::tests::chain_errors_tunnel_through_an_error_boxing_middleware ... ok
+test tower::tests::chain_errors_tunnel_through_unchanged ... ok
+test tower::tests::layers_wrap_a_mounted_service ... ok
+test tower::tests::middleware_can_short_circuit_without_calling_the_chain ... ok
+test tower::tests::middleware_is_built_once_and_shared_across_requests ... ok
+test tower::tests::mounts_a_service_at_a_catch_all_path ... ok
+test tower::tests::passes_the_request_through_to_the_route ... ok
+test tower::tests::request_edits_reach_the_route_but_not_the_caller ... ok
+test tower::tests::response_edits_reach_the_caller ... ok
+test tower::tests::timeout_middleware_cancels_a_hung_route ... ok
+test tower::tests::tower_layer_exposes_its_path ... ok
+test tower::tests::tower_route_exposes_its_methods_and_path ... ok
+test tower::tests::tower_service_accepts_foreign_request_bodies ... ok
+test tower::tests::tower_service_dispatches_to_the_router ... ok
+test tower::tests::tower_service_renders_a_panic_as_a_response ... ok
+test tower::tests::works_with_tower_buffer_and_rate_limit ... ok
+test tower::tests::works_with_tower_concurrency_limit ... ok
+test tower::tests::works_with_tower_http_compression ... ok
+test tower::tests::works_with_tower_http_cors ... ok
+test tower::tests::works_with_tower_http_set_response_header ... ok
+test tower::tests::works_with_tower_http_timeout ... ok
+test tower::tests::works_with_tower_http_trace ... ok
+test trailing_slash::tests::a_catch_all_has_no_twin ... ok
+test trailing_slash::tests::the_root_has_no_twin ... ok
+test trailing_slash::tests::twin_adds_a_trailing_slash ... ok
+test trailing_slash::tests::twin_removes_a_trailing_slash ... ok
+test content::websocket::upgrade::tests::echoes_messages_over_a_real_connection ... ok
+test service::tests::cuts_hung_connections_at_the_shutdown_timeout ... ok
+test service::tests::drains_the_in_flight_request_before_returning ... ok
+
+test result: ok. 621 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.31s
+
+   Doc-tests topcoat_router
+
+running 121 tests
+test crates/topcoat-router/src/../docs/content.md - content (line 9) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 104) ... ok
+test crates/topcoat-router/src/../docs/content.md - content (line 52) ... ok
+test crates/topcoat-router/src/../docs/content.md - content (line 31) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 33) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 123) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 11) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 51) ... ok
+test crates/topcoat-router/src/../docs/error.md - error (line 93) ... ok
+test crates/topcoat-router/src/../docs/href.md - href::href (line 132) ... ok
+test crates/topcoat-router/src/../docs/href.md - href::href (line 36) ... ok
+test crates/topcoat-router/src/../docs/href.md - href::href (line 9) ... ok
+test crates/topcoat-router/src/../docs/href.md - href::href (line 99) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 111) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 100) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 122) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 142) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 159) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 191) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 234) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 49) - compile ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 252) ... ok
+test crates/topcoat-router/src/../docs/tower.md - tower (line 28) - compile ... ok
+test crates/topcoat-router/src/../docs/tower.md - tower (line 43) ... ignored
+test crates/topcoat-router/src/../docs/tower.md - tower (line 64) ... ignored
+test crates/topcoat-router/src/../docs/tower.md - tower (line 9) ... ignored
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 315) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 321) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 84) ... ok
+test crates/topcoat-router/src/body_limit.rs - body_limit::BodyLimit (line 22) ... ok
+test crates/topcoat-router/src/body_limit.rs - body_limit::body_limit (line 81) ... ok
+test crates/topcoat-router/src/builder.rs - builder::RouterBuilder (line 24) ... ok
+test crates/topcoat-router/src/builder.rs - builder::RouterBuilder::trailing_slash (line 231) ... ok
+test crates/topcoat-router/src/content/../../docs/content/sitemap.md - content::sitemap (line 29) - compile ... ok
+test crates/topcoat-router/src/builder.rs - builder::RouterBuilder::trusted_proxies (line 209) ... ok
+test crates/topcoat-router/src/content/../../docs/content/sitemap.md - content::sitemap (line 46) ... ok
+test crates/topcoat-router/src/builder.rs - builder::RouterBuilder::with (line 254) ... ok
+test crates/topcoat-router/src/compression.rs - compression::Compression (line 31) ... ok
+test crates/topcoat-router/src/content/../../docs/content/sitemap.md - content::sitemap (line 9) ... ok
+test crates/topcoat-router/src/content/../../docs/content/sse.md - content::sse (line 33) ... ok
+test crates/topcoat-router/src/content/../../docs/content/sse.md - content::sse (line 68) ... ok
+test crates/topcoat-router/src/content/../../docs/content/websocket.md - content::websocket (line 69) ... ignored
+test crates/topcoat-router/src/content/../../docs/content/sse.md - content::sse (line 9) ... ok
+test crates/topcoat-router/src/content/form.rs - content::form::Form (line 32) ... ok
+test crates/topcoat-router/src/content/../../docs/content/websocket.md - content::websocket (line 37) ... ok
+test crates/topcoat-router/src/content/../../docs/content/websocket.md - content::websocket (line 9) ... ok
+test crates/topcoat-router/src/content/js.rs - content::js::Js (line 18) ... ok
+test crates/topcoat-router/src/content/json.rs - content::json::Json (line 31) ... ok
+test crates/topcoat-router/src/content/sitemap.rs - content::sitemap::Sitemap (line 34) ... ok
+test crates/topcoat-router/src/content/sitemap.rs - content::sitemap::SitemapUrl (line 153) ... ok
+test crates/topcoat-router/src/content/sse/event.rs - content::sse::event::Event (line 19) ... ok
+test crates/topcoat-router/src/content/sse/response.rs - content::sse::response::Sse (line 62) ... ok
+test crates/topcoat-router/src/content/wasm.rs - content::wasm::Wasm (line 22) ... ok
+test crates/topcoat-router/src/content/sse/response.rs - content::sse::response::Sse (line 37) ... ok
+test crates/topcoat-router/src/content/sse/event.rs - content::sse::event::last_event_id (line 172) ... ok
+test crates/topcoat-router/src/content/websocket/upgrade.rs - content::websocket::upgrade::WebSocketUpgrade (line 38) ... ok
+test crates/topcoat-router/src/content/websocket/upgrade.rs - content::websocket::upgrade::WebSocketUpgrade (line 67) ... ok
+test crates/topcoat-router/src/error.rs - error::RouterErrorExt (line 116) ... ok
+test crates/topcoat-router/src/error/bad_request.rs - error::bad_request::bad_request (line 13) ... ok
+test crates/topcoat-router/src/error/content_too_large.rs - error::content_too_large::content_too_large (line 14) ... ok
+test crates/topcoat-router/src/error/forbidden.rs - error::forbidden::forbidden (line 13) ... ok
+test crates/topcoat-router/src/error/not_found.rs - error::not_found::not_found (line 10) ... ok
+test crates/topcoat-router/src/error/internal_server.rs - error::internal_server::internal_server_error (line 16) ... ok
+test crates/topcoat-router/src/error/method_not_allowed.rs - error::method_not_allowed::method_not_allowed (line 17) ... ok
+test crates/topcoat-router/src/error/redirect.rs - error::redirect::redirect (line 20) ... ok
+test crates/topcoat-router/src/error/redirect.rs - error::redirect::redirect_permanent (line 45) ... ok
+test crates/topcoat-router/src/error/redirect.rs - error::redirect::see_other (line 119) ... ok
+test crates/topcoat-router/src/error/redirect.rs - error::redirect::see_other (line 139) ... ok
+test crates/topcoat-router/src/error/rewrite.rs - error::rewrite::rewrite (line 38) ... ok
+test crates/topcoat-router/src/error/service_unavailable.rs - error::service_unavailable::service_unavailable (line 15) ... ok
+test crates/topcoat-router/src/error/too_many_requests.rs - error::too_many_requests::too_many_requests (line 14) ... ok
+test crates/topcoat-router/src/error/unauthorized.rs - error::unauthorized::unauthorized (line 12) ... ok
+test crates/topcoat-router/src/href.rs - href::Href<T,P,Q,F>::is_current (line 626) ... ok
+test crates/topcoat-router/src/layer.rs - layer::Layer (line 44) ... ok
+test crates/topcoat-router/src/listener.rs - listener::UnixListener (line 67) - compile ... ok
+test crates/topcoat-router/src/href.rs - href::href (line 409) ... ok
+test crates/topcoat-router/src/layer/strip_prefix.rs - layer::strip_prefix::StripPrefixLayer::new (line 90) ... ok
+test crates/topcoat-router/src/layer/strip_prefix.rs - layer::strip_prefix::StripPrefixLayer::at (line 118) ... ok
+test crates/topcoat-router/src/module/segment.rs - module::segment::SegmentKind (line 18) ... ok
+test crates/topcoat-router/src/path.rs - path::Path (line 29) ... ok
+test crates/topcoat-router/src/origin.rs - origin::OriginPolicy (line 27) ... ok
+test crates/topcoat-router/src/origin.rs - origin::OriginPolicy::verify (line 105) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::as_str (line 321) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::matches (line 252) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::has_trailing_slash (line 337) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::join (line 218) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::segments (line 128) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::to_matchit_path (line 155) ... ok
+test crates/topcoat-router/src/path.rs - path::Path::starts_with (line 196) ... ok
+test crates/topcoat-router/src/path.rs - path::PathBuf (line 513) ... ok
+test crates/topcoat-router/src/path.rs - path::PathSegment<'a>::param_name (line 779) ... ok
+test crates/topcoat-router/src/proxy.rs - proxy::TrustedProxies (line 40) ... ok
+test crates/topcoat-router/src/request.rs - request::FromRequest (line 41) ... ok
+test crates/topcoat-router/src/proxy.rs - proxy::TrustedProxies (line 51) ... ok
+test crates/topcoat-router/src/request.rs - request::client_ip (line 463) ... ok
+test crates/topcoat-router/src/request.rs - request::content_type (line 354) ... ok
+test crates/topcoat-router/src/request.rs - request::extensions (line 384) ... ok
+test crates/topcoat-router/src/request.rs - request::initial_identity (line 734) ... ok
+test crates/topcoat-router/src/request.rs - request::headers (line 323) ... ok
+test crates/topcoat-router/src/request.rs - request::method (line 218) ... ok
+test crates/topcoat-router/src/request.rs - request::original_method (line 549) ... ok
+test crates/topcoat-router/src/request.rs - request::original_uri (line 590) ... ok
+test crates/topcoat-router/src/request.rs - request::original_parts (line 505) ... ok
+test crates/topcoat-router/src/request.rs - request::parts (line 184) ... ok
+test crates/topcoat-router/src/request.rs - request::uri (line 253) ... ok
+test crates/topcoat-router/src/request.rs - request::remote_addr (line 421) ... ok
+test crates/topcoat-router/src/response.rs - response::IntoResponse (line 42) ... ok
+test crates/topcoat-router/src/request.rs - request::version (line 288) ... ok
+test crates/topcoat-router/src/response/headers.rs - response::headers::ResponseHeaders (line 16) ... ok
+test crates/topcoat-router/src/route.rs - route::RouteFn::new (line 144) ... ok
+test crates/topcoat-router/src/route/directory.rs - route::directory::DirectoryRoute (line 74) ... ok
+test crates/topcoat-router/src/route/directory.rs - route::directory::DirectoryRoute (line 63) ... ok
+test crates/topcoat-router/src/route/directory.rs - route::directory::RouterBuilderDirectoryExt::public_dir (line 253) ... ok
+test crates/topcoat-router/src/route/directory.rs - route::directory::RouterBuilderDirectoryExt::serve_dir (line 232) ... ok
+test crates/topcoat-router/src/tower.rs - tower::TowerLayer (line 173) - compile ... ok
+test crates/topcoat-router/src/router.rs - router::Router (line 32) ... ok
+test crates/topcoat-router/src/router.rs - router::endpoint (line 298) ... ok
+test crates/topcoat-router/src/service.rs - service::RouterService (line 25) ... ok
+test crates/topcoat-router/src/tower.rs - tower::TowerRoute (line 50) ... ok
+test crates/topcoat-router/src/tower.rs - tower::TowerService (line 511) ... ok
+test crates/topcoat-router/src/trailing_slash.rs - trailing_slash::TrailingSlash (line 23) ... ok
+
+test result: ok. 117 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+
+running 4 tests
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 39) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 9) ... ok
+test crates/topcoat-router/src/layer/strip_prefix.rs - layer::strip_prefix::StripPrefixLayer (line 22) ... ok
+test crates/topcoat-router/src/../docs/module.md - module::module_router (line 335) ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.87s
+
+all doctests ran in 5.51s; merged doctests compilation took 4.53s

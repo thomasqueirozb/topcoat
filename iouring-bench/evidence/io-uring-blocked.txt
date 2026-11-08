@@ -1,0 +1,15 @@
+== raw syscall probe (python, root shell) ==
+io_uring_setup(8) -> fd -1 errno 1
+== sysctl ==
+0
+== seccomp of shell ==
+Seccomp:	2
+Seccomp_filters:	4
+== seccomp of PID 1 ==
+Seccomp:	2
+Seccomp_filters:	5
+== tokio-uring probe run ==
+
+thread 'main' (6366) panicked at /home/hatch/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-uring-0.5.0/src/lib.rs:148:48:
+called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: "Operation not permitted" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

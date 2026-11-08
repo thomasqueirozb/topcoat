@@ -1,0 +1,8 @@
+Transient systemd service (PID 1 context), Nov 7 2026:
+Running as unit: uringprobe3.service; invocation ID: a48731a283334f5d963a7774245bc523
+Starting uringprobe3.service - /usr/bin/python3 -c "\nimport ctypes\nlibc=ctypes.CDLL('libc.so.6', use_errno=True)\nprint('io_uring_setup ->', libc.syscall(425, 256, None), 'errno', ctypes.get_errno())\n"...
+Started uringprobe3.service - /usr/bin/python3 -c "\nimport ctypes\nlibc=ctypes.CDLL('libc.so.6', use_errno=True)\nprint('io_uring_setup ->', libc.syscall(425, 256, None), 'errno', ctypes.get_errno())\n".
+Failed to connect to bus: No such file or directory
+journal for uringprobe5 (fresh PID-1-context service):
+Started uringprobe5.service - /usr/bin/python3 -c "\nimport ctypes\nlibc=ctypes.CDLL('libc.so.6', use_errno=True)\nprint('io_uring_setup ->', libc.syscall(425, 256, None), 'errno', ctypes.get_errno())\n".
+io_uring_setup -> -1 errno 1

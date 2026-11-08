@@ -1,0 +1,6 @@
+$ PORT=3211 ./binaries/bench-fork-uring
+
+thread 'main' (16788) panicked at src/main.rs:25:64:
+called `Result::unwrap()` on an `Err` value: Custom { kind: PermissionDenied, error: "io_uring is not available on this system (Operation not permitted (os error 1)); the io-uring transport requires Linux with io_uring enabled and not blocked by seccomp or the kernel.io_uring_disabled sysctl" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+exit=101

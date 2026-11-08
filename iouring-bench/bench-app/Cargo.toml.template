@@ -1,0 +1,13 @@
+[package]
+name = "bench-app"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+
+[features]
+io-uring = ["topcoat/io-uring"]
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+topcoat = { path = "__TOPCOAT_PATH__" }

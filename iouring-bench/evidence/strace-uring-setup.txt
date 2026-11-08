@@ -1,0 +1,2 @@
+io_uring_setup(256, {flags=0, sq_thread_cpu=0, sq_thread_idle=0}) = -1 EPERM (Operation not permitted)
+thread 'main' (6813) panicked at /home/hatch/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-uring-0.5.0/src/lib.rs:148:48:
