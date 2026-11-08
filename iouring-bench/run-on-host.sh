@@ -55,7 +55,15 @@ cp build-fork/target/release/bench-app binaries/bench-fork-default
 
 echo "== 4. Correctness in uring mode (outstanding check) =="
 ./evidence/correctness.sh ./binaries/bench-fork-uring 3241 results/curl-fork-uring.txt
-diff results/curl-fork-uring.txt evidence/curl-baseline.txt && echo "uring curl output IDENTICAL to baseline" || echo "NOTE: uring curl output differs from baseline — inspect results/curl-fork-uring.txt vs evidence/curl-baseline.txt"
+# The `date` header value depends on when each transcript was captured,
+# so date lines are stripped from both sides before diffing; everything
+# else (status, headers, bodies) must match byte for byte.
+strip_dates() { sed -i '/^date: /d' "$1"; }
+cp results/curl-fork-uring.txt results/curl-fork-uring-nodate.txt
+cp evidence/curl-baseline.txt results/curl-baseline-nodate.txt
+strip_dates results/curl-fork-uring-nodate.txt
+strip_dates results/curl-baseline-nodate.txt
+diff results/curl-fork-uring-nodate.txt results/curl-baseline-nodate.txt && echo "uring curl output IDENTICAL to baseline (modulo date values)" || echo "NOTE: uring curl output differs from baseline — inspect results/curl-fork-uring.txt vs evidence/curl-baseline.txt"
 
 echo "== 5. Benchmarks (bench2.sh logic, relative paths) =="
 LG="$PWD/loadgen/target/release/loadgen"
@@ -67,7 +75,8 @@ bench_one() {
   cpu_ticks() { awk '{print $14+$15}' /proc/$PID/stat; }
   local CLK; CLK=$(getconf CLK_TCK)
   run() {
-    local path="$1" conn="$2" label="$3" f="results/loadgen-$NAME-$label.txt"
+    local path="$1" conn="$2" label="$3"
+    local f="results/loadgen-$NAME-$label.txt"
     local t0; t0=$(cpu_ticks)
     "$LG" "http://127.0.0.1:$PORT$path" "$conn" 10 > "$f" 2>&1
     local t1; t1=$(cpu_ticks)
