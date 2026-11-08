@@ -1,17 +1,28 @@
-//! Experimental io_uring edge transport (feature `io-uring`).
+//! Experimental io_uring transport (feature `io-uring`).
 //!
-//! Split-plane design: a small number of edge threads (one per core) each
-//! own a `tokio-uring` runtime and a `SO_REUSEPORT` listener. The edge owns
-//! the client sockets end to end — accept, recv, HTTP/1.1 parsing, send —
-//! and never runs application code. Each *complete* request is dispatched
-//! exactly once over a channel to a shared multi-thread Tokio runtime,
-//! where the router handles it with the normal Tokio APIs application code
-//! expects. The collected response travels back over a oneshot channel and
-//! the edge thread that owns the connection writes it.
+//! Thread-per-core design: one thread per core, each running a
+//! `tokio-uring` runtime and a `SO_REUSEPORT` listener, so the kernel
+//! load-balances connections across cores. A connection is handled end
+//! to end on the thread that accepted it — accept, recv, HTTP/1.1
+//! parsing, **the route handler itself**, and send — with no channel
+//! hops, no cross-thread wakeups, and no second runtime competing for
+//! the same cores.
 //!
-//! The crossing is per request, not per read/write, and buffers are moved,
-//! not copied more than the one collect of the response body (which the
-//! buffered dispatch requires anyway).
+//! An earlier version of this transport dispatched each request over a
+//! channel to a shared multi-thread Tokio runtime and the response back
+//! over a oneshot. Benchmarking showed that crossing cost more than the
+//! ring saved at every load level (up to ~30% slower than the default
+//! hyper transport at 500 connections), so the dispatch was removed:
+//! handlers now run on the edge threads, the way other io_uring
+//! frameworks (monoio, glommio) are structured.
+//!
+//! The trade-off is the runtime model application code runs under in
+//! this mode: a current-thread `tokio-uring` runtime per core. Code
+//! that needs Tokio's epoll-backed networking (`tokio::net`, and with
+//! it most database drivers and HTTP clients) or that blocks a thread
+//! for a long time is a poor fit — a blocking handler stalls every
+//! connection on its core. Such applications should keep the default
+//! transport; the application code itself is identical either way.
 //!
 //! Limitations of this prototype: HTTP/1.1 only (no HTTP/2, no TLS, no
 //! WebSocket/SSE upgrades), no chunked request bodies, no
@@ -20,10 +31,9 @@
 //! stopped by a signal, which terminates it as usual. Requests that need
 //! the excluded features must use the default transport.
 
-use std::{io, net::SocketAddr, sync::Arc};
+use std::{io, net::SocketAddr};
 
 use bytes::Bytes;
-use tokio::sync::{mpsc, oneshot};
 
 use crate::{Body, HeaderMap, RouterService, StatusCode, request::Request};
 
@@ -33,23 +43,14 @@ const MAX_HEAD_BYTES: usize = 64 * 1024;
 const MAX_BODY_BYTES: usize = 16 * 1024 * 1024;
 /// Read chunk size for one io_uring recv operation.
 const READ_CHUNK_BYTES: usize = 16 * 1024;
-/// Requests waiting between the edge threads and the handler runtime.
-const DISPATCH_QUEUE: usize = 1024;
 
-type BufferedResponse = (StatusCode, HeaderMap, Bytes);
-type Job = (
-    Request,
-    Option<SocketAddr>,
-    oneshot::Sender<BufferedResponse>,
-);
-
-/// Serves `service` on `addr` with the io_uring edge transport, blocking
-/// the calling thread until an edge thread fails.
+/// Serves `service` on `addr` with the io_uring transport, blocking the
+/// calling thread until an edge thread fails.
 ///
-/// Spawns one edge thread per available core, plus a multi-thread Tokio
-/// runtime for the handlers. Returns an error immediately when io_uring
-/// cannot be created on this system — this transport never falls back to
-/// `epoll` silently.
+/// Spawns one edge thread per available core; each thread runs the
+/// handlers for the connections it accepts. Returns an error immediately
+/// when io_uring cannot be created on this system — this transport never
+/// falls back to `epoll` silently.
 ///
 /// # Errors
 ///
@@ -62,43 +63,18 @@ pub fn serve_uring_blocking(service: RouterService, addr: SocketAddr) -> io::Res
 
     let workers = std::thread::available_parallelism().map_or(1, |n| n.get());
 
-    let handler_runtime = tokio::runtime::Builder::new_multi_thread()
-        .worker_threads(workers)
-        .thread_name("topcoat-handler")
-        .enable_all()
-        .build()?;
-
-    let (jobs_tx, jobs_rx) = mpsc::channel::<Job>(DISPATCH_QUEUE);
-    let jobs_rx = Arc::new(tokio::sync::Mutex::new(jobs_rx));
-
-    // One dispatcher task owns the receiving end; it spawns a task per
-    // request so a slow handler does not hold up the queue.
-    handler_runtime.spawn(async move {
-        loop {
-            let job = jobs_rx.lock().await.recv().await;
-            let Some((request, remote_addr, respond)) = job else {
-                break;
-            };
-            let service = service.clone();
-            tokio::spawn(async move {
-                let response = service.handle_buffered(request, remote_addr).await;
-                let _ = respond.send(response);
-            });
-        }
-    });
-
     let mut edge_threads = Vec::with_capacity(workers);
     for _ in 0..workers {
         let listener = bind_reuseport(addr)?;
-        let jobs = jobs_tx.clone();
+        let service = service.clone();
         edge_threads.push(std::thread::spawn(move || {
             tokio_uring::start(async move {
                 let listener = tokio_uring::net::TcpListener::from_std(listener);
                 loop {
                     let (stream, peer) = listener.accept().await?;
-                    let jobs = jobs.clone();
+                    let service = service.clone();
                     tokio_uring::spawn(async move {
-                        let _ = handle_connection(stream, peer, jobs).await;
+                        let _ = handle_connection(stream, peer, service).await;
                     });
                 }
                 #[allow(unreachable_code)]
@@ -106,7 +82,6 @@ pub fn serve_uring_blocking(service: RouterService, addr: SocketAddr) -> io::Res
             })
         }));
     }
-    drop(jobs_tx);
 
     for thread in edge_threads {
         // An edge thread only returns when its accept loop errored (or the
@@ -149,17 +124,20 @@ fn bind_reuseport(addr: SocketAddr) -> io::Result<std::net::TcpListener> {
     )?;
     socket.set_reuse_address(true)?;
     socket.set_reuse_port(true)?;
+    // Accepted sockets inherit TCP_NODELAY from the listener on Linux,
+    // and tokio-uring streams expose no setter of their own.
+    socket.set_nodelay(true)?;
     socket.bind(&addr.into())?;
     socket.listen(1024)?;
     Ok(socket.into())
 }
 
-/// Serves one connection: read and dispatch requests in order until the
+/// Serves one connection: read and handle requests in order until the
 /// peer closes it, a response ends keep-alive, or an error occurs.
 async fn handle_connection(
     stream: tokio_uring::net::TcpStream,
     peer: SocketAddr,
-    jobs: mpsc::Sender<Job>,
+    service: RouterService,
 ) -> io::Result<()> {
     let mut buffered: Vec<u8> = Vec::with_capacity(READ_CHUNK_BYTES);
     let mut read_buf = vec![0u8; READ_CHUNK_BYTES];
@@ -185,23 +163,10 @@ async fn handle_connection(
         if let Some(complete) = parsed {
             buffered.drain(..complete.consumed);
             let head_only = complete.request.method() == http::Method::HEAD;
-            let (respond_tx, respond_rx) = oneshot::channel();
-            if jobs
-                .send((complete.request, Some(peer), respond_tx))
-                .await
-                .is_err()
-            {
-                return Err(io::Error::new(
-                    io::ErrorKind::BrokenPipe,
-                    "the handler runtime has shut down",
-                ));
-            }
-            let Ok((status, headers, body)) = respond_rx.await else {
-                return Err(io::Error::new(
-                    io::ErrorKind::BrokenPipe,
-                    "the handler dropped the request",
-                ));
-            };
+            // The handler runs here, on this connection's edge thread —
+            // no dispatch, no wakeup of another runtime.
+            let (status, headers, body) =
+                service.handle_buffered(complete.request, Some(peer)).await;
             let response = encode_response(
                 status,
                 &headers,
@@ -382,13 +347,25 @@ fn encode_response(
     // Match the hyper transport's wire format: a `date` header on every
     // response, and `connection: close` only when actually closing
     // (HTTP/1.1 keep-alive is implicit, hyper sends no header for it).
-    out.extend_from_slice(
-        format!(
-            "date: {}\r\n",
-            httpdate::fmt_http_date(std::time::SystemTime::now())
-        )
-        .as_bytes(),
-    );
+    // Like hyper, the formatted date is cached for the current second —
+    // formatting it per response is measurable at high request rates.
+    thread_local! {
+        static CACHED_DATE: std::cell::RefCell<(u64, String)> =
+            const { std::cell::RefCell::new((0, String::new())) };
+    }
+    let date = CACHED_DATE.with(|cache| {
+        let now = std::time::SystemTime::now();
+        let secs = now
+            .duration_since(std::time::UNIX_EPOCH)
+            .map_or(0, |d| d.as_secs());
+        let mut cache = cache.borrow_mut();
+        if cache.0 != secs {
+            cache.1 = httpdate::fmt_http_date(now);
+            cache.0 = secs;
+        }
+        cache.1.clone()
+    });
+    out.extend_from_slice(format!("date: {date}\r\n").as_bytes());
     if !keep_alive {
         out.extend_from_slice(b"connection: close\r\n");
     }

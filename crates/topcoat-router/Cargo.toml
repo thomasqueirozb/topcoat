@@ -49,7 +49,6 @@ io-uring = [
 	"dep:io-uring",
 	"dep:httparse",
 	"dep:socket2",
-	"tokio/rt-multi-thread",
 ]
 sse = [
 	"dep:tokio",
