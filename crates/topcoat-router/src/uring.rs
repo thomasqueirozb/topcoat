@@ -379,11 +379,19 @@ fn encode_response(
         out.extend_from_slice(b"\r\n");
     }
     out.extend_from_slice(format!("content-length: {}\r\n", body.len()).as_bytes());
-    out.extend_from_slice(if keep_alive {
-        &b"connection: keep-alive\r\n"[..]
-    } else {
-        &b"connection: close\r\n"[..]
-    });
+    // Match the hyper transport's wire format: a `date` header on every
+    // response, and `connection: close` only when actually closing
+    // (HTTP/1.1 keep-alive is implicit, hyper sends no header for it).
+    out.extend_from_slice(
+        format!(
+            "date: {}\r\n",
+            httpdate::fmt_http_date(std::time::SystemTime::now())
+        )
+        .as_bytes(),
+    );
+    if !keep_alive {
+        out.extend_from_slice(b"connection: close\r\n");
+    }
     out.extend_from_slice(b"\r\n");
     if !head_only {
         out.extend_from_slice(body);

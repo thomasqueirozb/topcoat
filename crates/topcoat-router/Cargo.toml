@@ -44,6 +44,7 @@ serve = [
 ]
 io-uring = [
 	"serve",
+	"dep:httpdate",
 	"dep:tokio-uring",
 	"dep:io-uring",
 	"dep:httparse",
