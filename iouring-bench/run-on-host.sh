@@ -72,7 +72,23 @@ bench_one() {
   PORT=$PORT "$BIN" > "results/server-$NAME.log" 2>&1 &
   local PID=$!
   for i in $(seq 1 50); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break || sleep 0.2; done
-  cpu_ticks() { awk '{print $14+$15}' /proc/$PID/stat; }
+  server_alive() { kill -0 $PID 2>/dev/null; }
+  if ! server_alive; then
+    echo "ERROR: server $NAME (pid $PID) exited during startup — log follows:"
+    cat "results/server-$NAME.log"
+    exit 1
+  fi
+  # A server that dies mid-bench must abort loudly with its log, not
+  # produce missing/zero numbers (an earlier version died opaquely in
+  # awk reading /proc/$PID/stat).
+  cpu_ticks() {
+    if ! server_alive; then
+      echo "ERROR: server $NAME (pid $PID) died during benchmarking — log follows:" >&2
+      cat "results/server-$NAME.log" >&2
+      exit 1
+    fi
+    awk '{print $14+$15}' /proc/$PID/stat
+  }
   local CLK; CLK=$(getconf CLK_TCK)
   run() {
     local path="$1" conn="$2" label="$3"
