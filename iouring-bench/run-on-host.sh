@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # run-on-host.sh — run the Topcoat io_uring benchmark on a host where
 # io_uring_setup is permitted (a normal bare-metal / KVM cloud VM).
 # Run from inside the unpacked topcoat-iouring/ directory.

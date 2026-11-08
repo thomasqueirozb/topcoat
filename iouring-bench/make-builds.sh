@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Generates the two build trees for the benchmark app. src/main.rs is
 # copied verbatim into both; the manifests differ ONLY in the topcoat
 # path (upstream vs fork). The io_uring build is the fork tree built

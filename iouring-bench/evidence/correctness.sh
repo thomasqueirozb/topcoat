@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Usage: correctness.sh <binary> <port> <outfile>
 set -u
 BIN="$1"; PORT="$2"; OUT="$3"
