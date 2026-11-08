@@ -14,7 +14,12 @@ python3 - <<'PY'
 import ctypes, os, sys
 libc = ctypes.CDLL(None, use_errno=True)
 nr = 425 if os.uname().machine == "x86_64" else 426  # io_uring_setup
-fd = libc.syscall(nr, 8, None)
+# io_uring_setup copies the params struct from user memory, so it needs a
+# real zeroed buffer (io_uring_params is 120 bytes). Passing None makes a
+# WORKING kernel return EFAULT, which looks exactly like a block — an
+# earlier version of this probe did that and misreported healthy hosts.
+params = ctypes.create_string_buffer(128)
+fd = libc.syscall(nr, 8, params)
 if fd < 0:
     e = ctypes.get_errno()
     print(f"io_uring_setup(8) -> -1 errno {e} ({os.strerror(e)}) — BLOCKED, stopping here")
